@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NMBM.Views.Undertaker"
+             NavigationPage.HasBackButton="False"
+             Title=""
+             BindingContext="{Binding UndertakerViewModel, Source={StaticResource Locator}}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary"  Text="About AC"  Command="{Binding AboutCommand}"/>
+        <ToolbarItem Order="Secondary" Text="Logout"  Command="{Binding LogOutCommand}"  />
+    </ContentPage.ToolbarItems>
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" x:Name="SubmitLayout" Padding="6,4,6,4" Spacing="10">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,20,0,20" VerticalOptions="FillAndExpand">
+                        <Image Source="/Resources/drawable/nmbm.png" WidthRequest="110" VerticalOptions="Center" HeightRequest="64"/>
+                    </ContentView>
+                </StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Undertaker:" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="1" Grid.Column="0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Deceased:" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="2" Grid.Column="0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Counter:" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label x:Name="lblUndertakerName" Grid.Row="0" Grid.Column="1"  FontAttributes="Bold"  />
+                    <Label x:Name="lblDeceasedDetails" Grid.Row="1" Grid.Column="1"  FontAttributes="Bold"  />
+                    <Label x:Name="lblAccessCounter" Grid.Row="2" Grid.Column="1"  FontAttributes="Bold"  />
+                </Grid>
+
+                <Button Margin="0,10,0,0"  Command="{Binding ContinueCommand}"  IsEnabled="{Binding StartEnabled}"  x:Name="btnBurialPass" Text="Continue Burial Pass"   BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+
+                <Button Margin="0,10,0,0" x:Name="btnSubmit" Command="{Binding ConfirmCommand}" IsEnabled="{Binding StartEnabled}" Text="Control Sheet Submitted"   BackgroundColor="#00c853" TextColor="White"/>
+                <ActivityIndicator IsVisible="{Binding IsBusy}"
+                                   IsRunning="{Binding IsBusy}"
+                                   Color="DodgerBlue"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
+                />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+
+
+
+</ContentPage>

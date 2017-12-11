@@ -1,0 +1,780 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SmartMunModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CEM_BurialApplication">
+          <Key>
+            <PropertyRef Name="app_ID" />
+          </Key>
+          <Property Name="app_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="app_Deceased_Fname" Type="varchar" MaxLength="50" />
+          <Property Name="app_Deceased_Sname" Type="varchar" MaxLength="50" />
+          <Property Name="app_Deceased_Address" Type="varchar" MaxLength="200" />
+          <Property Name="app_Deceased_DOB" Type="datetime" />
+          <Property Name="app_Deceased_DOD" Type="datetime" />
+          <Property Name="app_Deceased_Age" Type="int" />
+          <Property Name="app_Deceased_Resident" Type="varchar" MaxLength="5" />
+          <Property Name="app_Deceased_CODID" Type="bigint" />
+          <Property Name="app_Deceased_Gender" Type="varchar" MaxLength="10" />
+          <Property Name="app_Deceased_Nationality" Type="varchar" MaxLength="25" />
+          <Property Name="app_Deceased_Race" Type="varchar" MaxLength="25" />
+          <Property Name="app_NoK_Title" Type="varchar" MaxLength="10" />
+          <Property Name="app_NoK_Fname" Type="varchar" MaxLength="50" />
+          <Property Name="app_NoK_Sname" Type="varchar" MaxLength="50" />
+          <Property Name="app_NoK_Address" Type="varchar" MaxLength="200" />
+          <Property Name="app_NoK_Tel" Type="varchar" MaxLength="20" />
+          <Property Name="app_NoK_Cell" Type="varchar" MaxLength="20" />
+          <Property Name="app_NoK_EMail" Type="varchar" MaxLength="50" />
+          <Property Name="app_Applicant_Relationship" Type="varchar" MaxLength="50" />
+          <Property Name="app_Applicant_Title" Type="varchar" MaxLength="50" />
+          <Property Name="app_Applicant_Fname" Type="varchar" MaxLength="50" />
+          <Property Name="app_Applicant_Sname" Type="varchar" MaxLength="50" />
+          <Property Name="app_Applicant_Address" Type="varchar" MaxLength="200" />
+          <Property Name="app_Applicant_Tel" Type="varchar" MaxLength="20" />
+          <Property Name="app_Applicant_Cell" Type="varchar" MaxLength="20" />
+          <Property Name="app_Applicant_Email" Type="varchar" MaxLength="50" />
+          <Property Name="app_Applicant_IDcheck" Type="varchar" MaxLength="5" />
+          <Property Name="app_Applicant_IDDoc" Type="nchar" MaxLength="10" />
+          <Property Name="app_Applicant_Deathcheck" Type="varchar" MaxLength="5" />
+          <Property Name="app_Applicant_DeathDoc" Type="nchar" MaxLength="10" />
+          <Property Name="app_Applicant_BurialOrdercheck" Type="varchar" MaxLength="5" />
+          <Property Name="app_Applicant_BurialOrderDoc" Type="nchar" MaxLength="10" />
+          <Property Name="app_Quote_CemeteryID" Type="bigint" />
+          <Property Name="app_Quote_Total" Type="nchar" MaxLength="10" />
+          <Property Name="app_Receipt_Type" Type="varchar" MaxLength="50" />
+          <Property Name="app_Receipt_IssuedBy" Type="varchar" MaxLength="50" />
+          <Property Name="app_Receipt_Date" Type="datetime" />
+          <Property Name="app_Receipt_Nr" Type="varchar" MaxLength="50" />
+          <Property Name="app_Receipt_Amount" Type="money" />
+          <Property Name="app_Allocation_CemeteryID" Type="bigint" />
+          <Property Name="app_Allocation_SectionID" Type="bigint" />
+          <Property Name="app_Allocation_BlockID" Type="bigint" />
+          <Property Name="app_Allocation_Row" Type="varchar" MaxLength="50" />
+          <Property Name="app_Allocation_Grave" Type="varchar" MaxLength="50" />
+          <Property Name="app_Allocation_BurialDate" Type="datetime" />
+          <Property Name="app_Allocation_BurialTime" Type="varchar" MaxLength="50" />
+          <Property Name="app_CaptureUserID" Type="bigint" />
+          <Property Name="app_CaptureDate" Type="datetime" />
+          <Property Name="app_UpdateUserID" Type="bigint" />
+          <Property Name="app_UpdateDate" Type="datetime" />
+          <Property Name="app_BurialID" Type="bigint" />
+          <Property Name="app_UndertakerID" Type="bigint" />
+          <Property Name="app_Converted" Type="varchar" MaxLength="30" />
+          <Property Name="app_PrintedQuote" Type="varchar" MaxLength="5" />
+          <Property Name="app_BO_Number" Type="varchar" MaxLength="50" />
+          <Property Name="app_BO_IssuedBy" Type="varchar" MaxLength="50" />
+          <Property Name="app_Deceased_IDNr" Type="varchar" MaxLength="15" />
+          <Property Name="app_Deceased_IDType" Type="varchar" MaxLength="20" />
+          <Property Name="App_UndertakerName" Type="varchar" MaxLength="50" />
+          <Property Name="app_Deleted" Type="varchar" MaxLength="5" />
+          <Property Name="app_Stage" Type="int" />
+          <Property Name="app_COD_Description" Type="varchar" MaxLength="500" />
+          <Property Name="app_COD_Contagious_Disease" Type="varchar" MaxLength="5" />
+          <Property Name="app_Remarks" Type="varchar" MaxLength="200" />
+          <Property Name="app_Applicant_AppIDcheck" Type="varchar" MaxLength="5" />
+          <Property Name="app_Applicant_Cremationcheck" Type="varchar" MaxLength="5" />
+          <Property Name="app_Cremation_OriginalPaycheck" Type="varchar" MaxLength="5" />
+          <Property Name="app_Cremation_ScheduleEcheck" Type="varchar" MaxLength="5" />
+          <Property Name="app_Cremation_ScheduleFcheck" Type="varchar" MaxLength="5" />
+          <Property Name="app_Cremation_ScheduleGcheck" Type="varchar" MaxLength="5" />
+          <Property Name="app_Cremation_ScheduleHcheck" Type="varchar" MaxLength="5" />
+          <Property Name="GRAVETYPEID" Type="bigint" />
+          <Property Name="app_NoKIDNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="app_NoKRelation" Type="nvarchar" MaxLength="150" />
+          <Property Name="app_Receipt_Comment" Type="varchar" MaxLength="200" />
+          <Property Name="app_Exceeded_Threshold" Type="int" />
+          <Property Name="app_Deceased_Age_Months" Type="int" />
+          <Property Name="app_Deceased_Age_Days" Type="int" />
+          <Property Name="app_Deceased_Age_Hours" Type="int" />
+          <Property Name="app_Deceased_Contagious_Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="app_Burial_Register_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="app_DuplicateReceiptComment" Type="varchar" MaxLength="200" />
+          <Property Name="ServiceTypeId" Type="bigint" />
+          <Property Name="ToLongitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="ToLatitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeleteApplicationReason" Type="nvarchar" MaxLength="200" />
+          <Property Name="AuthoriseSubSequentBurialReason" Type="nvarchar" MaxLength="200" />
+          <Property Name="AccessCount" Type="int" />
+          <Property Name="OTPDate" Type="datetime" />
+          <Property Name="MunicipalApplicantId" Type="int" />
+          <Property Name="InstituteId" Type="int" />
+          <Property Name="ServiceTypeCategoryId" Type="int" />
+          <Property Name="CemeterySupervisorId" Type="int" />
+          <Property Name="MonumentalCompanyId" Type="int" />
+          <Property Name="app_Applicant_BurialPlan" Type="int" />
+          <Property Name="app_Applicant_GravePhoto" Type="int" />
+          <Property Name="ExhumedFromApplicationId" Type="int" />
+          <Property Name="ExhumationTo" Type="nvarchar" MaxLength="30" />
+          <Property Name="ExhumationDetails" Type="nvarchar" MaxLength="200" />
+          <Property Name="ServiceTypeRegisterNumber" Type="bigint" />
+          <Property Name="PauperType" Type="int" />
+          <Property Name="ChkAffidavit" Type="int" />
+          <Property Name="ChkCremationCertificate" Type="int" />
+          <Property Name="EnviromentHealthNumber" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="CEM_BurialApplication_Deceased_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BurialApplicationId" Type="bigint" Nullable="false" />
+          <Property Name="BINumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BurialOrderNumber" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CEM_LIST_CEMETERY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="200" />
+          <Property Name="RECYCLEYEARS" Type="bigint" />
+          <Property Name="RECYCLEGRAVES" Type="int" />
+          <Property Name="CURRENTCAPACITY" Type="bigint" />
+          <Property Name="LATTITUDE" Type="numeric" Precision="15" Scale="10" />
+          <Property Name="LONGITUDE" Type="numeric" Precision="15" Scale="10" />
+          <Property Name="ACTIVE" Type="int" />
+          <Property Name="TOTALCAPACITY" Type="bigint" />
+          <Property Name="SURNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="FIRSTNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="TITLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="TELWORK" Type="nvarchar" MaxLength="50" />
+          <Property Name="TELCELL" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="200" />
+          <Property Name="STREET" Type="nvarchar" MaxLength="100" />
+          <Property Name="SUBURB" Type="nvarchar" MaxLength="100" />
+          <Property Name="CITYID" Type="bigint" />
+          <Property Name="POSTALCODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREMATORIUM" Type="varchar" MaxLength="5" />
+          <Property Name="LEASERENEWAL" Type="money" />
+          <Property Name="LastEditDate" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="CreationDate" Type="bigint" />
+          <Property Name="MAXBURIALS" Type="int" />
+          <Property Name="MAXBURIALSFlag" Type="varchar" MaxLength="5" />
+          <Property Name="CATEGORYID" Type="bigint" />
+          <Property Name="VoteNumber" Type="varchar" MaxLength="50" />
+          <Property Name="IsEnviromentalHealth" Type="int" />
+        </EntityType>
+        <EntityType Name="CEM_LIST_CEMETERY_SUPERVISOR">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="10" />
+          <Property Name="SupervisorPassword" Type="nvarchar" MaxLength="10" />
+          <Property Name="CemeteryId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="CEM_LIST_UNDERTAKER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="200" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cell" Type="nvarchar" MaxLength="15" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="15" />
+          <Property Name="Title" Type="nvarchar" MaxLength="15" />
+          <Property Name="Initial" Type="nvarchar" MaxLength="15" />
+          <Property Name="FirstN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surn" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="int" />
+          <Property Name="DesignationNumber" Type="varchar" MaxLength="8" />
+          <Property Name="ComplianceDate" Type="datetime" />
+          <Property Name="VATNumber" Type="nchar" MaxLength="50" />
+          <Property Name="REGNumber" Type="nchar" MaxLength="50" />
+          <Property Name="PostalAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaxBodyCapacity" Type="int" />
+          <Property Name="IDNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="PortalUsername" Type="nvarchar" MaxLength="50" />
+          <Property Name="PortalContactNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="PortalEmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="GrantAccess" Type="int" />
+          <Property Name="WebPortalNotice" Type="nvarchar" MaxLength="100" />
+          <Property Name="PortalOtp" Type="varchar" MaxLength="10" />
+          <Property Name="IsMonumentalCompany" Type="int" />
+        </EntityType>
+        <Function Name="AccessControlListByCemetery" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CemeteryId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Incomplete_Burial_Application" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="startdate" Type="datetime" Mode="In" />
+          <Parameter Name="enddate" Type="datetime" Mode="In" />
+          <Parameter Name="reportType" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SoftwareWebportalUsageReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="type" Type="int" Mode="In" />
+          <Parameter Name="FromDate" Type="char" Mode="In" />
+          <Parameter Name="ToDate" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_Undertaker_QuotationForBurialApplication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="appId" Type="bigint" Mode="In" />
+          <Parameter Name="tariffId" Type="bigint" Mode="In" />
+        </Function>
+        <EntityContainer Name="SmartMunModelStoreContainer">
+          <EntitySet Name="CEM_BurialApplication" EntityType="Self.CEM_BurialApplication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CEM_BurialApplication_Deceased_Details" EntityType="Self.CEM_BurialApplication_Deceased_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CEM_LIST_CEMETERY" EntityType="Self.CEM_LIST_CEMETERY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CEM_LIST_CEMETERY_SUPERVISOR" EntityType="Self.CEM_LIST_CEMETERY_SUPERVISOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CEM_LIST_UNDERTAKER" EntityType="Self.CEM_LIST_UNDERTAKER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SmartMunModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CEM_BurialApplication">
+          <Key>
+            <PropertyRef Name="app_ID" />
+          </Key>
+          <Property Name="app_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="app_Deceased_Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Deceased_Sname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Deceased_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="app_Deceased_DOB" Type="DateTime" Precision="3" />
+          <Property Name="app_Deceased_DOD" Type="DateTime" Precision="3" />
+          <Property Name="app_Deceased_Age" Type="Int32" />
+          <Property Name="app_Deceased_Resident" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Deceased_CODID" Type="Int64" />
+          <Property Name="app_Deceased_Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="app_Deceased_Nationality" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="app_Deceased_Race" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="app_NoK_Title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="app_NoK_Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_NoK_Sname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_NoK_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="app_NoK_Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="app_NoK_Cell" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="app_NoK_EMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_Relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_Sname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_Cell" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_IDcheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_IDDoc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="app_Applicant_Deathcheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_DeathDoc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="app_Applicant_BurialOrdercheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_BurialOrderDoc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="app_Quote_CemeteryID" Type="Int64" />
+          <Property Name="app_Quote_Total" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="app_Receipt_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Receipt_IssuedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Receipt_Date" Type="DateTime" Precision="3" />
+          <Property Name="app_Receipt_Nr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Receipt_Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="app_Allocation_CemeteryID" Type="Int64" />
+          <Property Name="app_Allocation_SectionID" Type="Int64" />
+          <Property Name="app_Allocation_BlockID" Type="Int64" />
+          <Property Name="app_Allocation_Row" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Allocation_Grave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Allocation_BurialDate" Type="DateTime" Precision="3" />
+          <Property Name="app_Allocation_BurialTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_CaptureUserID" Type="Int64" />
+          <Property Name="app_CaptureDate" Type="DateTime" Precision="3" />
+          <Property Name="app_UpdateUserID" Type="Int64" />
+          <Property Name="app_UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="app_BurialID" Type="Int64" />
+          <Property Name="app_UndertakerID" Type="Int64" />
+          <Property Name="app_Converted" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="app_PrintedQuote" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_BO_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_BO_IssuedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Deceased_IDNr" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="app_Deceased_IDType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="App_UndertakerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="app_Deleted" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Stage" Type="Int32" />
+          <Property Name="app_COD_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="app_COD_Contagious_Disease" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_AppIDcheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Applicant_Cremationcheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Cremation_OriginalPaycheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Cremation_ScheduleEcheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Cremation_ScheduleFcheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Cremation_ScheduleGcheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="app_Cremation_ScheduleHcheck" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="GRAVETYPEID" Type="Int64" />
+          <Property Name="app_NoKIDNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="app_NoKRelation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="app_Receipt_Comment" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="app_Exceeded_Threshold" Type="Int32" />
+          <Property Name="app_Deceased_Age_Months" Type="Int32" />
+          <Property Name="app_Deceased_Age_Days" Type="Int32" />
+          <Property Name="app_Deceased_Age_Hours" Type="Int32" />
+          <Property Name="app_Deceased_Contagious_Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="app_Burial_Register_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="app_DuplicateReceiptComment" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceTypeId" Type="Int64" />
+          <Property Name="ToLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ToLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeleteApplicationReason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AuthoriseSubSequentBurialReason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AccessCount" Type="Int32" />
+          <Property Name="OTPDate" Type="DateTime" Precision="3" />
+          <Property Name="MunicipalApplicantId" Type="Int32" />
+          <Property Name="InstituteId" Type="Int32" />
+          <Property Name="ServiceTypeCategoryId" Type="Int32" />
+          <Property Name="CemeterySupervisorId" Type="Int32" />
+          <Property Name="MonumentalCompanyId" Type="Int32" />
+          <Property Name="app_Applicant_BurialPlan" Type="Int32" />
+          <Property Name="app_Applicant_GravePhoto" Type="Int32" />
+          <Property Name="ExhumedFromApplicationId" Type="Int32" />
+          <Property Name="ExhumationTo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ExhumationDetails" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceTypeRegisterNumber" Type="Int64" />
+          <Property Name="PauperType" Type="Int32" />
+          <Property Name="ChkAffidavit" Type="Int32" />
+          <Property Name="ChkCremationCertificate" Type="Int32" />
+          <Property Name="EnviromentHealthNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CEM_BurialApplication_Deceased_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BurialApplicationId" Type="Int64" Nullable="false" />
+          <Property Name="BINumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BurialOrderNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CEM_LIST_CEMETERY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RECYCLEYEARS" Type="Int64" />
+          <Property Name="RECYCLEGRAVES" Type="Int32" />
+          <Property Name="CURRENTCAPACITY" Type="Int64" />
+          <Property Name="LATTITUDE" Type="Decimal" Precision="15" Scale="10" />
+          <Property Name="LONGITUDE" Type="Decimal" Precision="15" Scale="10" />
+          <Property Name="ACTIVE" Type="Int32" />
+          <Property Name="TOTALCAPACITY" Type="Int64" />
+          <Property Name="SURNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FIRSTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TELWORK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TELCELL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="STREET" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SUBURB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CITYID" Type="Int64" />
+          <Property Name="POSTALCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREMATORIUM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="LEASERENEWAL" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="LastEditDate" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CreationDate" Type="Int64" />
+          <Property Name="MAXBURIALS" Type="Int32" />
+          <Property Name="MAXBURIALSFlag" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CATEGORYID" Type="Int64" />
+          <Property Name="VoteNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsEnviromentalHealth" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CEM_LIST_CEMETERY_SUPERVISOR">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SupervisorPassword" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CemeteryId" Type="Int64" />
+        </EntityType>
+        <EntityType Name="CEM_LIST_UNDERTAKER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cell" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Initial" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FirstN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Int32" />
+          <Property Name="DesignationNumber" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ComplianceDate" Type="DateTime" Precision="3" />
+          <Property Name="VATNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="REGNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PostalAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaxBodyCapacity" Type="Int32" />
+          <Property Name="IDNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PortalUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PortalContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PortalEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GrantAccess" Type="Int32" />
+          <Property Name="WebPortalNotice" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PortalOtp" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IsMonumentalCompany" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="SmartMunEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CEM_BurialApplication" EntityType="Self.CEM_BurialApplication" />
+          <EntitySet Name="CEM_BurialApplication_Deceased_Details" EntityType="Self.CEM_BurialApplication_Deceased_Details" />
+          <EntitySet Name="CEM_LIST_CEMETERY" EntityType="Self.CEM_LIST_CEMETERY" />
+          <EntitySet Name="CEM_LIST_CEMETERY_SUPERVISOR" EntityType="Self.CEM_LIST_CEMETERY_SUPERVISOR" />
+          <EntitySet Name="CEM_LIST_UNDERTAKER" EntityType="Self.CEM_LIST_UNDERTAKER" />
+          <FunctionImport Name="AccessControlListByCemetery" ReturnType="Collection(SmartMunModel.AccessControlListByCemetery_Result)">
+            <Parameter Name="CemeteryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Incomplete_Burial_Application" ReturnType="Collection(SmartMunModel.Incomplete_Burial_Application_Result)">
+            <Parameter Name="startdate" Mode="In" Type="DateTime" />
+            <Parameter Name="enddate" Mode="In" Type="DateTime" />
+            <Parameter Name="reportType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SoftwareWebportalUsageReport">
+            <Parameter Name="type" Mode="In" Type="Int32" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Undertaker_QuotationForBurialApplication" ReturnType="Collection(SmartMunModel.sp_Undertaker_QuotationForBurialApplication_Result)">
+            <Parameter Name="appId" Mode="In" Type="Int64" />
+            <Parameter Name="tariffId" Mode="In" Type="Int64" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="AccessControlListByCemetery_Result">
+          <Property Type="Int64" Name="BurialApplication" Nullable="false" />
+          <Property Type="String" Name="Undertaker" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Cemetery" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="BurialDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="AccessCount" Nullable="false" />
+          <Property Type="DateTime" Name="OTPDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="DeceasedDetails" Nullable="true" MaxLength="101" />
+        </ComplexType>
+        <ComplexType Name="Incomplete_Burial_Application_Result">
+          <Property Type="Int32" Name="BurialYears" Nullable="true" />
+          <Property Type="Int32" Name="complete" Nullable="true" />
+          <Property Type="Int32" Name="incomplete" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_Undertaker_QuotationForBurialApplication_Result">
+          <Property Type="Int64" Name="app_ID" Nullable="false" />
+          <Property Type="String" Name="serviceType" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="app_Deceased_Fname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="app_Deceased_Sname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="app_Deceased_DOB" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="app_Deceased_DOD" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="app_Deceased_Age" Nullable="true" />
+          <Property Type="String" Name="app_Deceased_IDNr" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="CauseOfDeath" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Cemetery" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="CemeteryVoteNumber" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="app_Deceased_Gender" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="app_Deceased_Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Section" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="GraveType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="app_Allocation_BurialDate" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="app_Receipt_Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="app_BO_Number" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="app_CaptureDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="app_Allocation_Row" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="app_Allocation_Grave" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="app_Quote_Total" Nullable="true" />
+          <Property Type="Double" Name="Vat" Nullable="true" />
+          <Property Type="Double" Name="GrandTotal" Nullable="false" />
+          <Property Type="String" Name="Undertaker" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="VoteNumber" Nullable="true" MaxLength="20" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SmartMunModelStoreContainer" CdmEntityContainer="SmartMunEntities">
+          <EntitySetMapping Name="CEM_BurialApplication">
+            <EntityTypeMapping TypeName="SmartMunModel.CEM_BurialApplication">
+              <MappingFragment StoreEntitySet="CEM_BurialApplication">
+                <ScalarProperty Name="app_ID" ColumnName="app_ID" />
+                <ScalarProperty Name="app_Deceased_Fname" ColumnName="app_Deceased_Fname" />
+                <ScalarProperty Name="app_Deceased_Sname" ColumnName="app_Deceased_Sname" />
+                <ScalarProperty Name="app_Deceased_Address" ColumnName="app_Deceased_Address" />
+                <ScalarProperty Name="app_Deceased_DOB" ColumnName="app_Deceased_DOB" />
+                <ScalarProperty Name="app_Deceased_DOD" ColumnName="app_Deceased_DOD" />
+                <ScalarProperty Name="app_Deceased_Age" ColumnName="app_Deceased_Age" />
+                <ScalarProperty Name="app_Deceased_Resident" ColumnName="app_Deceased_Resident" />
+                <ScalarProperty Name="app_Deceased_CODID" ColumnName="app_Deceased_CODID" />
+                <ScalarProperty Name="app_Deceased_Gender" ColumnName="app_Deceased_Gender" />
+                <ScalarProperty Name="app_Deceased_Nationality" ColumnName="app_Deceased_Nationality" />
+                <ScalarProperty Name="app_Deceased_Race" ColumnName="app_Deceased_Race" />
+                <ScalarProperty Name="app_NoK_Title" ColumnName="app_NoK_Title" />
+                <ScalarProperty Name="app_NoK_Fname" ColumnName="app_NoK_Fname" />
+                <ScalarProperty Name="app_NoK_Sname" ColumnName="app_NoK_Sname" />
+                <ScalarProperty Name="app_NoK_Address" ColumnName="app_NoK_Address" />
+                <ScalarProperty Name="app_NoK_Tel" ColumnName="app_NoK_Tel" />
+                <ScalarProperty Name="app_NoK_Cell" ColumnName="app_NoK_Cell" />
+                <ScalarProperty Name="app_NoK_EMail" ColumnName="app_NoK_EMail" />
+                <ScalarProperty Name="app_Applicant_Relationship" ColumnName="app_Applicant_Relationship" />
+                <ScalarProperty Name="app_Applicant_Title" ColumnName="app_Applicant_Title" />
+                <ScalarProperty Name="app_Applicant_Fname" ColumnName="app_Applicant_Fname" />
+                <ScalarProperty Name="app_Applicant_Sname" ColumnName="app_Applicant_Sname" />
+                <ScalarProperty Name="app_Applicant_Address" ColumnName="app_Applicant_Address" />
+                <ScalarProperty Name="app_Applicant_Tel" ColumnName="app_Applicant_Tel" />
+                <ScalarProperty Name="app_Applicant_Cell" ColumnName="app_Applicant_Cell" />
+                <ScalarProperty Name="app_Applicant_Email" ColumnName="app_Applicant_Email" />
+                <ScalarProperty Name="app_Applicant_IDcheck" ColumnName="app_Applicant_IDcheck" />
+                <ScalarProperty Name="app_Applicant_IDDoc" ColumnName="app_Applicant_IDDoc" />
+                <ScalarProperty Name="app_Applicant_Deathcheck" ColumnName="app_Applicant_Deathcheck" />
+                <ScalarProperty Name="app_Applicant_DeathDoc" ColumnName="app_Applicant_DeathDoc" />
+                <ScalarProperty Name="app_Applicant_BurialOrdercheck" ColumnName="app_Applicant_BurialOrdercheck" />
+                <ScalarProperty Name="app_Applicant_BurialOrderDoc" ColumnName="app_Applicant_BurialOrderDoc" />
+                <ScalarProperty Name="app_Quote_CemeteryID" ColumnName="app_Quote_CemeteryID" />
+                <ScalarProperty Name="app_Quote_Total" ColumnName="app_Quote_Total" />
+                <ScalarProperty Name="app_Receipt_Type" ColumnName="app_Receipt_Type" />
+                <ScalarProperty Name="app_Receipt_IssuedBy" ColumnName="app_Receipt_IssuedBy" />
+                <ScalarProperty Name="app_Receipt_Date" ColumnName="app_Receipt_Date" />
+                <ScalarProperty Name="app_Receipt_Nr" ColumnName="app_Receipt_Nr" />
+                <ScalarProperty Name="app_Receipt_Amount" ColumnName="app_Receipt_Amount" />
+                <ScalarProperty Name="app_Allocation_CemeteryID" ColumnName="app_Allocation_CemeteryID" />
+                <ScalarProperty Name="app_Allocation_SectionID" ColumnName="app_Allocation_SectionID" />
+                <ScalarProperty Name="app_Allocation_BlockID" ColumnName="app_Allocation_BlockID" />
+                <ScalarProperty Name="app_Allocation_Row" ColumnName="app_Allocation_Row" />
+                <ScalarProperty Name="app_Allocation_Grave" ColumnName="app_Allocation_Grave" />
+                <ScalarProperty Name="app_Allocation_BurialDate" ColumnName="app_Allocation_BurialDate" />
+                <ScalarProperty Name="app_Allocation_BurialTime" ColumnName="app_Allocation_BurialTime" />
+                <ScalarProperty Name="app_CaptureUserID" ColumnName="app_CaptureUserID" />
+                <ScalarProperty Name="app_CaptureDate" ColumnName="app_CaptureDate" />
+                <ScalarProperty Name="app_UpdateUserID" ColumnName="app_UpdateUserID" />
+                <ScalarProperty Name="app_UpdateDate" ColumnName="app_UpdateDate" />
+                <ScalarProperty Name="app_BurialID" ColumnName="app_BurialID" />
+                <ScalarProperty Name="app_UndertakerID" ColumnName="app_UndertakerID" />
+                <ScalarProperty Name="app_Converted" ColumnName="app_Converted" />
+                <ScalarProperty Name="app_PrintedQuote" ColumnName="app_PrintedQuote" />
+                <ScalarProperty Name="app_BO_Number" ColumnName="app_BO_Number" />
+                <ScalarProperty Name="app_BO_IssuedBy" ColumnName="app_BO_IssuedBy" />
+                <ScalarProperty Name="app_Deceased_IDNr" ColumnName="app_Deceased_IDNr" />
+                <ScalarProperty Name="app_Deceased_IDType" ColumnName="app_Deceased_IDType" />
+                <ScalarProperty Name="App_UndertakerName" ColumnName="App_UndertakerName" />
+                <ScalarProperty Name="app_Deleted" ColumnName="app_Deleted" />
+                <ScalarProperty Name="app_Stage" ColumnName="app_Stage" />
+                <ScalarProperty Name="app_COD_Description" ColumnName="app_COD_Description" />
+                <ScalarProperty Name="app_COD_Contagious_Disease" ColumnName="app_COD_Contagious_Disease" />
+                <ScalarProperty Name="app_Remarks" ColumnName="app_Remarks" />
+                <ScalarProperty Name="app_Applicant_AppIDcheck" ColumnName="app_Applicant_AppIDcheck" />
+                <ScalarProperty Name="app_Applicant_Cremationcheck" ColumnName="app_Applicant_Cremationcheck" />
+                <ScalarProperty Name="app_Cremation_OriginalPaycheck" ColumnName="app_Cremation_OriginalPaycheck" />
+                <ScalarProperty Name="app_Cremation_ScheduleEcheck" ColumnName="app_Cremation_ScheduleEcheck" />
+                <ScalarProperty Name="app_Cremation_ScheduleFcheck" ColumnName="app_Cremation_ScheduleFcheck" />
+                <ScalarProperty Name="app_Cremation_ScheduleGcheck" ColumnName="app_Cremation_ScheduleGcheck" />
+                <ScalarProperty Name="app_Cremation_ScheduleHcheck" ColumnName="app_Cremation_ScheduleHcheck" />
+                <ScalarProperty Name="GRAVETYPEID" ColumnName="GRAVETYPEID" />
+                <ScalarProperty Name="app_NoKIDNumber" ColumnName="app_NoKIDNumber" />
+                <ScalarProperty Name="app_NoKRelation" ColumnName="app_NoKRelation" />
+                <ScalarProperty Name="app_Receipt_Comment" ColumnName="app_Receipt_Comment" />
+                <ScalarProperty Name="app_Exceeded_Threshold" ColumnName="app_Exceeded_Threshold" />
+                <ScalarProperty Name="app_Deceased_Age_Months" ColumnName="app_Deceased_Age_Months" />
+                <ScalarProperty Name="app_Deceased_Age_Days" ColumnName="app_Deceased_Age_Days" />
+                <ScalarProperty Name="app_Deceased_Age_Hours" ColumnName="app_Deceased_Age_Hours" />
+                <ScalarProperty Name="app_Deceased_Contagious_Description" ColumnName="app_Deceased_Contagious_Description" />
+                <ScalarProperty Name="app_Burial_Register_Number" ColumnName="app_Burial_Register_Number" />
+                <ScalarProperty Name="app_DuplicateReceiptComment" ColumnName="app_DuplicateReceiptComment" />
+                <ScalarProperty Name="ServiceTypeId" ColumnName="ServiceTypeId" />
+                <ScalarProperty Name="ToLongitude" ColumnName="ToLongitude" />
+                <ScalarProperty Name="ToLatitude" ColumnName="ToLatitude" />
+                <ScalarProperty Name="DeleteApplicationReason" ColumnName="DeleteApplicationReason" />
+                <ScalarProperty Name="AuthoriseSubSequentBurialReason" ColumnName="AuthoriseSubSequentBurialReason" />
+                <ScalarProperty Name="AccessCount" ColumnName="AccessCount" />
+                <ScalarProperty Name="OTPDate" ColumnName="OTPDate" />
+                <ScalarProperty Name="MunicipalApplicantId" ColumnName="MunicipalApplicantId" />
+                <ScalarProperty Name="InstituteId" ColumnName="InstituteId" />
+                <ScalarProperty Name="ServiceTypeCategoryId" ColumnName="ServiceTypeCategoryId" />
+                <ScalarProperty Name="CemeterySupervisorId" ColumnName="CemeterySupervisorId" />
+                <ScalarProperty Name="MonumentalCompanyId" ColumnName="MonumentalCompanyId" />
+                <ScalarProperty Name="app_Applicant_BurialPlan" ColumnName="app_Applicant_BurialPlan" />
+                <ScalarProperty Name="app_Applicant_GravePhoto" ColumnName="app_Applicant_GravePhoto" />
+                <ScalarProperty Name="ExhumedFromApplicationId" ColumnName="ExhumedFromApplicationId" />
+                <ScalarProperty Name="ExhumationTo" ColumnName="ExhumationTo" />
+                <ScalarProperty Name="ExhumationDetails" ColumnName="ExhumationDetails" />
+                <ScalarProperty Name="ServiceTypeRegisterNumber" ColumnName="ServiceTypeRegisterNumber" />
+                <ScalarProperty Name="PauperType" ColumnName="PauperType" />
+                <ScalarProperty Name="ChkAffidavit" ColumnName="ChkAffidavit" />
+                <ScalarProperty Name="ChkCremationCertificate" ColumnName="ChkCremationCertificate" />
+                <ScalarProperty Name="EnviromentHealthNumber" ColumnName="EnviromentHealthNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CEM_BurialApplication_Deceased_Details">
+            <EntityTypeMapping TypeName="SmartMunModel.CEM_BurialApplication_Deceased_Details">
+              <MappingFragment StoreEntitySet="CEM_BurialApplication_Deceased_Details">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BurialApplicationId" ColumnName="BurialApplicationId" />
+                <ScalarProperty Name="BINumber" ColumnName="BINumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BurialOrderNumber" ColumnName="BurialOrderNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CEM_LIST_CEMETERY">
+            <EntityTypeMapping TypeName="SmartMunModel.CEM_LIST_CEMETERY">
+              <MappingFragment StoreEntitySet="CEM_LIST_CEMETERY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="RECYCLEYEARS" ColumnName="RECYCLEYEARS" />
+                <ScalarProperty Name="RECYCLEGRAVES" ColumnName="RECYCLEGRAVES" />
+                <ScalarProperty Name="CURRENTCAPACITY" ColumnName="CURRENTCAPACITY" />
+                <ScalarProperty Name="LATTITUDE" ColumnName="LATTITUDE" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="TOTALCAPACITY" ColumnName="TOTALCAPACITY" />
+                <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="TELWORK" ColumnName="TELWORK" />
+                <ScalarProperty Name="TELCELL" ColumnName="TELCELL" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="SUBURB" ColumnName="SUBURB" />
+                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+                <ScalarProperty Name="POSTALCODE" ColumnName="POSTALCODE" />
+                <ScalarProperty Name="CREMATORIUM" ColumnName="CREMATORIUM" />
+                <ScalarProperty Name="LEASERENEWAL" ColumnName="LEASERENEWAL" />
+                <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="MAXBURIALS" ColumnName="MAXBURIALS" />
+                <ScalarProperty Name="MAXBURIALSFlag" ColumnName="MAXBURIALSFlag" />
+                <ScalarProperty Name="CATEGORYID" ColumnName="CATEGORYID" />
+                <ScalarProperty Name="VoteNumber" ColumnName="VoteNumber" />
+                <ScalarProperty Name="IsEnviromentalHealth" ColumnName="IsEnviromentalHealth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CEM_LIST_CEMETERY_SUPERVISOR">
+            <EntityTypeMapping TypeName="SmartMunModel.CEM_LIST_CEMETERY_SUPERVISOR">
+              <MappingFragment StoreEntitySet="CEM_LIST_CEMETERY_SUPERVISOR">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="SupervisorPassword" ColumnName="SupervisorPassword" />
+                <ScalarProperty Name="CemeteryId" ColumnName="CemeteryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CEM_LIST_UNDERTAKER">
+            <EntityTypeMapping TypeName="SmartMunModel.CEM_LIST_UNDERTAKER">
+              <MappingFragment StoreEntitySet="CEM_LIST_UNDERTAKER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Cell" ColumnName="Cell" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Initial" ColumnName="Initial" />
+                <ScalarProperty Name="FirstN" ColumnName="FirstN" />
+                <ScalarProperty Name="Surn" ColumnName="Surn" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DesignationNumber" ColumnName="DesignationNumber" />
+                <ScalarProperty Name="ComplianceDate" ColumnName="ComplianceDate" />
+                <ScalarProperty Name="VATNumber" ColumnName="VATNumber" />
+                <ScalarProperty Name="REGNumber" ColumnName="REGNumber" />
+                <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+                <ScalarProperty Name="MaxBodyCapacity" ColumnName="MaxBodyCapacity" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="PortalUsername" ColumnName="PortalUsername" />
+                <ScalarProperty Name="PortalContactNumber" ColumnName="PortalContactNumber" />
+                <ScalarProperty Name="PortalEmailAddress" ColumnName="PortalEmailAddress" />
+                <ScalarProperty Name="GrantAccess" ColumnName="GrantAccess" />
+                <ScalarProperty Name="WebPortalNotice" ColumnName="WebPortalNotice" />
+                <ScalarProperty Name="PortalOtp" ColumnName="PortalOtp" />
+                <ScalarProperty Name="IsMonumentalCompany" ColumnName="IsMonumentalCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AccessControlListByCemetery" FunctionName="SmartMunModel.Store.AccessControlListByCemetery">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SmartMunModel.AccessControlListByCemetery_Result">
+                <ScalarProperty Name="BurialApplication" ColumnName="BurialApplication" />
+                <ScalarProperty Name="Undertaker" ColumnName="Undertaker" />
+                <ScalarProperty Name="Cemetery" ColumnName="Cemetery" />
+                <ScalarProperty Name="BurialDate" ColumnName="BurialDate" />
+                <ScalarProperty Name="AccessCount" ColumnName="AccessCount" />
+                <ScalarProperty Name="OTPDate" ColumnName="OTPDate" />
+                <ScalarProperty Name="DeceasedDetails" ColumnName="DeceasedDetails" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Incomplete_Burial_Application" FunctionName="SmartMunModel.Store.Incomplete_Burial_Application">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SmartMunModel.Incomplete_Burial_Application_Result">
+                <ScalarProperty Name="BurialYears" ColumnName="BurialYears" />
+                <ScalarProperty Name="complete" ColumnName="complete" />
+                <ScalarProperty Name="incomplete" ColumnName="incomplete" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SoftwareWebportalUsageReport" FunctionName="SmartMunModel.Store.SoftwareWebportalUsageReport" />
+          <FunctionImportMapping FunctionImportName="sp_Undertaker_QuotationForBurialApplication" FunctionName="SmartMunModel.Store.sp_Undertaker_QuotationForBurialApplication">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SmartMunModel.sp_Undertaker_QuotationForBurialApplication_Result">
+                <ScalarProperty Name="app_ID" ColumnName="app_ID" />
+                <ScalarProperty Name="serviceType" ColumnName="serviceType" />
+                <ScalarProperty Name="app_Deceased_Fname" ColumnName="app_Deceased_Fname" />
+                <ScalarProperty Name="app_Deceased_Sname" ColumnName="app_Deceased_Sname" />
+                <ScalarProperty Name="app_Deceased_DOB" ColumnName="app_Deceased_DOB" />
+                <ScalarProperty Name="app_Deceased_DOD" ColumnName="app_Deceased_DOD" />
+                <ScalarProperty Name="app_Deceased_Age" ColumnName="app_Deceased_Age" />
+                <ScalarProperty Name="app_Deceased_IDNr" ColumnName="app_Deceased_IDNr" />
+                <ScalarProperty Name="CauseOfDeath" ColumnName="CauseOfDeath" />
+                <ScalarProperty Name="Cemetery" ColumnName="Cemetery" />
+                <ScalarProperty Name="CemeteryVoteNumber" ColumnName="CemeteryVoteNumber" />
+                <ScalarProperty Name="app_Deceased_Gender" ColumnName="app_Deceased_Gender" />
+                <ScalarProperty Name="app_Deceased_Address" ColumnName="app_Deceased_Address" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="GraveType" ColumnName="GraveType" />
+                <ScalarProperty Name="app_Allocation_BurialDate" ColumnName="app_Allocation_BurialDate" />
+                <ScalarProperty Name="app_Receipt_Type" ColumnName="app_Receipt_Type" />
+                <ScalarProperty Name="app_BO_Number" ColumnName="app_BO_Number" />
+                <ScalarProperty Name="app_CaptureDate" ColumnName="app_CaptureDate" />
+                <ScalarProperty Name="app_Allocation_Row" ColumnName="app_Allocation_Row" />
+                <ScalarProperty Name="app_Allocation_Grave" ColumnName="app_Allocation_Grave" />
+                <ScalarProperty Name="app_Quote_Total" ColumnName="app_Quote_Total" />
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
+                <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+                <ScalarProperty Name="Undertaker" ColumnName="Undertaker" />
+                <ScalarProperty Name="VoteNumber" ColumnName="VoteNumber" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

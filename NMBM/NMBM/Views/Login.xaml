@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:NMBM.ViewModels;assembly=NMBM"
+             xmlns:validator="clr-namespace:NMBM.Helpers.Validator;assembly=NMBM"
+             x:Class="NMBM.Views.Login"
+             Title="NMBM Cemetery Access Control"
+             BindingContext="{Binding LoginViewModel, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <StackLayout x:Name="LoginLayout" Orientation="Vertical" Padding="6,4,6,4" WidthRequest="12" Spacing="15">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                        <ContentView Padding="0,20,0,20" VerticalOptions="FillAndExpand">
+                            <Image Source="/Resources/drawable/nmbm.png" WidthRequest="110" VerticalOptions="Center" HeightRequest="84"/>
+                        </ContentView>
+                    </StackLayout>
+                    <Entry Placeholder="Username"  WidthRequest="10"    x:Name="Username" Text="{Binding Username,Mode=TwoWay}">
+                    </Entry>
+                    <Entry Placeholder="Password" x:Name="Password" IsPassword="True" Text="{Binding Password,Mode=TwoWay}">
+                    </Entry>
+                    <Button Command="{Binding LoginCommand}"
+                        Text="{Binding ButtonText}"
+                        TextColor="White"
+                        FontSize="20"
+                        x:Name="BtnLogin" 
+                        IsEnabled="{Binding StartEnabled}"
+                        BackgroundColor="DodgerBlue"/>
+                    <StackLayout IsVisible="{Binding IsBusy}" Padding="12"
+                             AbsoluteLayout.LayoutFlags="PositionProportional"
+                             AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                        <ActivityIndicator IsRunning="{Binding IsBusy}" Color ="DodgerBlue"/>
+                        <Label Text="Loading..." HorizontalOptions="Center" TextColor="DodgerBlue"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

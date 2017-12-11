@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:NMBM.Views;assembly=NMBM"
+             xmlns:viewModels="clr-namespace:NMBM.ViewModels;assembly=NMBM"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:converters="clr-namespace:NMBM.Helpers.Converters;assembly=NMBM"
+             xmlns:behaviors1="clr-namespace:NMBM.Helpers.Behaviors;assembly=NMBM"
+             NavigationPage.HasBackButton="False"
+             x:Class="NMBM.Views.Burials"
+             Title="Cemetery Burials"
+             BindingContext="{Binding BurialsViewModel, Source={StaticResource Locator}}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:SelectedItemEventArgsToSelectedItemConverter x:Key="SelectedItemConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary"  Text="About AC"  Command="{Binding AboutCommand}"/>
+        <ToolbarItem Order="Secondary" Text="Logout"  Command="{Binding LogOutCommand}"  />
+    </ContentPage.ToolbarItems>
+    <Frame IsClippedToBounds="True"
+         HasShadow="True"
+         BackgroundColor="White" >
+        <Frame.OutlineColor>
+            <OnPlatform x:TypeArguments="Color"
+                  Android="Gray"
+                  iOS="Gray"/>
+        </Frame.OutlineColor>
+        <Frame.Margin>
+            <OnPlatform x:TypeArguments="Thickness"
+                  Android="10" iOS="10"/>
+        </Frame.Margin>
+        <Frame.Padding>
+            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0"/>
+        </Frame.Padding>
+
+        <ListView x:Name="ListViewCemeteries" 
+                  ItemsSource="{Binding BurialList}"
+                  IsPullToRefreshEnabled="true"
+                  RefreshCommand="{Binding RefreshCommand}"
+                  IsRefreshing="{Binding IsRefreshing}"
+               HasUnevenRows="True">
+            <ListView.Behaviors>
+                <behaviors1:ListViewSelectedItemBehavior Command="{Binding OutputAgeCommand}" Converter="{StaticResource SelectedItemConverter}" />
+            </ListView.Behaviors>
+            <ListView.Header>
+                <StackLayout Padding="3,2,2,5" Orientation="Horizontal"  HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource Primary}">
+                    <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                        <Label Text="Welcome" FontSize="Small" TextColor="White"/>
+                        <Label x:Name="lblFullname" FontSize="Medium" HorizontalOptions="Start" TextColor="White"/>
+                    </StackLayout>
+                    <StackLayout  Padding="10,10,10,5"  Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                        <Image HeightRequest="40" WidthRequest="80"  Source="/Resources/drawable/scanner.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding OnTapGestureRecognizerTapped}"
+                                      />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Grid BackgroundColor="White" HeightRequest="10"/>
+                            <StackLayout Orientation="Horizontal" Padding="20">
+                                <BoxView x:Name="boxAlertColors"  Color="{Binding Colors}"  WidthRequest="4"/>
+                                <Grid VerticalOptions="CenterAndExpand" Padding="0" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label FontAttributes="Bold" Grid.Row="0" Grid.Column="0"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="16" 
+                                           Text="{Binding BurialDateS, Mode = TwoWay}">
+                                        <Label.LineBreakMode>
+                                            <OnPlatform x:TypeArguments="LineBreakMode" Android="NoWrap" iOS="TailTruncation"/>
+                                        </Label.LineBreakMode>
+                                    </Label>
+                                    <BoxView Grid.Row="1" Color="Gray" HorizontalOptions="FillAndExpand" HeightRequest="1"/>
+                                    <Grid Grid.Row="2" BackgroundColor="Transparent" Padding="4">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding  BurialApplication, StringFormat='#{0} |'}"/>
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding   Undertaker, Mode = TwoWay}"/>
+                                    </Grid>
+                                </Grid>
+                            </StackLayout>
+                           
+                        </StackLayout>
+                      
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </Frame>
+    <!--<StackLayout IsVisible="true" Padding="12"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                 AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+        <ActivityIndicator IsRunning="true" Color ="DodgerBlue"/>
+        <Label Text="Loading..." HorizontalOptions="Center" TextColor="DodgerBlue"/>
+    </StackLayout>-->
+</ContentPage>
